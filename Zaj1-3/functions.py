@@ -67,6 +67,11 @@ def info_gain(attribute, count_decision, data):
     last_row = last_row[len(last_row) - 1]
     return entropy(last_row) - info(attribute, count_decision)
 
+def balanced_information_growth(attribute, count_decision, data):
+    splitinfo = entropy(attribute)
+    gain = info_gain(attribute, count_decision, data)
+    return gain/splitinfo
+
 
 
 

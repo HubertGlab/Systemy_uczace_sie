@@ -17,10 +17,12 @@ def wyznaczenie_atrybutu(x: int, data):  # x - indeks argumentu, data - wynik pr
 
 
 dane = transpozycja(data)
-count_att3, decision_att3, ind = wyznaczenie_atrybutu(2, dane)
+count_att, decision_att, ind = wyznaczenie_atrybutu(0, dane)
 
 print(f'entropia dla klasy decyzyjnej wynosi: {fc.decision_entropy(dane)}')
 print(f'wartosc funkcji informacji wynosi:'
-      f' {fc.info(count_att3, decision_att3)} dla atrybutu nr {ind}')
+      f' {fc.info(count_att, decision_att)} dla atrybutu nr {ind}')
 print(f'wartosc przyrostu informacji wynosi:'
-      f' {fc.info_gain(count_att3, decision_att3, dane)} dla atrybutu nr {ind}')
+      f' {fc.info_gain(count_att, decision_att, dane)} dla atrybutu nr {ind}')
+print(f'zrownowazony przyrost informacji wynosi:'
+      f' {fc.balanced_information_growth(count_att, decision_att, dane)} dla atrybutu nr {ind}')
